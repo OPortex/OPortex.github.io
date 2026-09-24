@@ -1,0 +1,221 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>RetroHackset | 0Portex.Research</title><meta name="author" content="0Portex"><meta name="copyright" content="0Portex"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="RetroHackset    The Main Purpose of this Project was To Turn this Telephone Into a Headset to Record Guitar Riffs, And listen to Music Through it.. The Project Beginning stage was to examine the Telep">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RetroHackset">
+<meta property="og:url" content="https://oportex.github.io/2026/09/24/RetroHackset/index.html">
+<meta property="og:site_name" content="0Portex.Research">
+<meta property="og:description" content="RetroHackset    The Main Purpose of this Project was To Turn this Telephone Into a Headset to Record Guitar Riffs, And listen to Music Through it.. The Project Beginning stage was to examine the Telep">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://oportex.github.io/img/avatar.jpg">
+<meta property="article:published_time" content="2026-09-24T11:37:21.000Z">
+<meta property="article:modified_time" content="2026-09-24T11:41:54.441Z">
+<meta property="article:author" content="0Portex">
+<meta property="article:tag" content="hardware - project - retro">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://oportex.github.io/img/avatar.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "RetroHackset",
+  "url": "https://oportex.github.io/2026/09/24/RetroHackset/",
+  "image": "https://oportex.github.io/img/avatar.jpg",
+  "datePublished": "2026-09-24T11:37:21.000Z",
+  "dateModified": "2026-09-24T11:41:54.441Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "0Portex",
+      "url": "https://oportex.github.io"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://oportex.github.io/2026/09/24/RetroHackset/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.7.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        const data = { value }
+
+        if (ttl != null) {
+          data.expiry = Date.now() + ttl * 86400000
+        }
+
+        localStorage.setItem(key, JSON.stringify(data))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return
+
+        try {
+          const data = JSON.parse(itemStr)
+
+          if (data.expiry && Date.now() > data.expiry) {
+            localStorage.removeItem(key)
+            return
+          }
+
+          return data.value
+        } catch {
+          localStorage.removeItem(key)
+        }
+      }
+    }
+
+    const scriptCache = new Map()
+    const cssCache = new Map()
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => {
+        if (scriptCache.has(url)) {
+          return scriptCache.get(url)
+        }
+
+        const promise = new Promise((resolve, reject) => {
+          const script = document.createElement('script')
+
+          script.src = url
+          script.async = true
+
+          for (const key in attr) {
+            script.setAttribute(key, attr[key])
+          }
+
+          script.onload = resolve
+          script.onerror = reject
+
+          document.head.appendChild(script)
+        })
+
+        scriptCache.set(url, promise)
+
+        return promise
+      },
+      getCSS: (url, id) => {
+        if (cssCache.has(url)) {
+          return cssCache.get(url)
+        }
+
+        const promise = new Promise((resolve, reject) => {
+          const link = document.createElement('link')
+
+          link.rel = 'stylesheet'
+          link.href = url
+
+          if (id) {
+            link.id = id
+          }
+
+          link.onload = resolve
+          link.onerror = reject
+
+          document.head.appendChild(link)
+        })
+
+        cssCache.set(url, promise)
+
+        return promise
+      },
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const metaThemeColor = document.querySelector('meta[name="theme-color"]')
+      const activateDarkMode = () => {
+        document.documentElement.dataset.theme = 'dark'
+        if (metaThemeColor !== null) {
+          metaThemeColor.setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.dataset.theme = 'light'
+        if (metaThemeColor !== null) {
+          metaThemeColor.setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'RetroHackset',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"><meta name="generator" content="Hexo 8.1.2"></head><body><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/banner01.gif);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">0Portex.Research</span></a><a class="nav-page-title" href="/"><span class="site-name">RetroHackset</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  Back to Home</span></span></a></span><div id="menus"></div></nav><div id="post-info"><h1 class="post-title">RetroHackset</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2026-09-24T11:37:21.000Z" title="Created 2026-09-24 14:37:21">2026-09-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2026-09-24T11:41:54.441Z" title="Updated 2026-09-24 14:41:54">2026-09-24</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Projects/">Projects</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="RetroHackset"><a href="#RetroHackset" class="headerlink" title="RetroHackset"></a>RetroHackset</h1><img width="800" height="600" alt="image" src="https://github.com/user-attachments/assets/37ebf37c-bb16-4095-80f6-065ca9892041" />
+
+
+
+<p><strong>The Main Purpose of this Project was To Turn this Telephone Into a Headset to Record Guitar Riffs, And listen to Music Through it..</strong></p>
+<h2 id="The-Project-Beginning-stage-was-to-examine-the-Telephone-from-the-inside"><a href="#The-Project-Beginning-stage-was-to-examine-the-Telephone-from-the-inside" class="headerlink" title="The Project Beginning stage was to examine the Telephone from the inside."></a>The Project Beginning stage was to examine the Telephone from the inside.</h2><p>When we Dissamble the Telephone we see in the upper side The speaker and<br>on the bottom The Mic which is bellow the Hardware.<br><img width="800" height="600" alt="IMG_20260624_152137_568" src="https://github.com/user-attachments/assets/03b52986-7381-43e7-95e0-08f21aa326b3" /></p>
+<p>Since Now, we know Where the Speaker And MIC is Located,<br>we gotta cut the wires that connect them to the motherboard and Desolder it.</p>
+<h2 id="Stage-2-is-Soldering"><a href="#Stage-2-is-Soldering" class="headerlink" title="Stage 2 is Soldering"></a>Stage 2 is Soldering</h2><p>Now we will remove all the components except for Speaker and Mic, and <strong>Solder</strong> 2 Jumper wires to the Speaker and 2 Jumper Wires to the Mic, and Stretch it Out Through the RJ11 Gap.<br><em>It Would look like this..</em><br><img width="800" height="600" alt="IMG_20260624_175350_053" src="https://github.com/user-attachments/assets/d75afb4a-2c8e-43ed-b660-0157c51dc5ba" /></p>
+<p>Now we gotta Solder Jumper Wires to USB audio Adapter Input Metal tabs..<br><img width="800" height="600" alt="image-1782304323692" src="https://github.com/user-attachments/assets/f5b3f145-a320-4669-a7b3-6d41b659615c" /></p>
+<p>Before we <strong>Solder</strong> All the Jumper wires we gotta <strong>Solder</strong> Just the Audio&#x2F;speaker to the USB Audio Adapter..<br>If we use Multi-meter we can see the Connection will be Fine, If there was no Beeps then we gotta <strong>Solder</strong> everything again.</p>
+<p>Since in my case, It was a success. So, we gonna <strong>Solder</strong> the remaining Jumper wires to the MIC Then we move to next stage..</p>
+<p>It would look like this..<br><img width="800" height="600" alt="IMG_20260624_234029_187" src="https://github.com/user-attachments/assets/9ed76fb0-f8fc-4152-8e64-da30fbf75b4b" /></p>
+<h2 id="Stage-3-Testing-the-Speaker-MIC"><a href="#Stage-3-Testing-the-Speaker-MIC" class="headerlink" title="Stage 3 Testing the Speaker &amp; MIC"></a>Stage 3 Testing the Speaker &amp; MIC</h2><img width="800" height="600" alt="image" src="https://github.com/user-attachments/assets/c239a37a-201f-45c6-bae3-b612bfb76baf" />
+
+<p>As we can see, The Computer Detect the Speaker and the Mic, here is preview of How the recording audio Sounds like (<em>I’m Not Professional Guitarist, I used my phone to play Guitar Riffs from youtube</em>)</p>
+<p>Note <strong>The audio sounds good if there is distance From MIC, Since I kept The Phone too close to the MIC the Audio have some weird noise In it, But I believe Editing the Audio will remove it.. Thank you for reading</strong></p>
+<p><em>Audio Sample</em><br><a target="_blank" rel="noopener" href="https://github.com/user-attachments/files/29413418/GuitarRiffsOnRetroHackset.mp3">GuitarRiffsOnRetroHackset.mp3</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="https://oportex.github.io">0Portex</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="https://oportex.github.io/2026/09/24/RetroHackset/">https://oportex.github.io/2026/09/24/RetroHackset/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener" href="https://opensource.org/licenses/MIT">MIT License</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/hardware-project-retro/">hardware - project - retro</a></div><div class="post-share"><div class="social-share" data-image="/img/avatar.jpg" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2026/09/24/introduction/" title="Hello Humans or Robots idk"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">Next</div><div class="info-item-2">Hello Humans or Robots idk</div></div><div class="info-2"><div class="info-item-1">This blogs are to Record my Research in field of hardwareand malware or maybe more in future,remind you I will try to write my blogs professionally,So Im no expert in writing professional writeups aboutmy research so bear with me more about me in my github. </div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">0Portex</div><div class="author-info-description">Research and Projects Blog</div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">2</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">1</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">1</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/OPortex"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/OPortex" target="_blank" title="fab fa-github"><i class="Github" style="color: #24292e;"></i></a><a class="social-icon" href="https://x.com/PoliticaMind" target="_blank" title="fab fa-x-twitte"><i class="Twitter" style="color: #1DA1F2;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Research Blogs</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#RetroHackset"><span class="toc-number">1.</span> <span class="toc-text">RetroHackset</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#The-Project-Beginning-stage-was-to-examine-the-Telephone-from-the-inside"><span class="toc-number">1.1.</span> <span class="toc-text">The Project Beginning stage was to examine the Telephone from the inside.</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Stage-2-is-Soldering"><span class="toc-number">1.2.</span> <span class="toc-text">Stage 2 is Soldering</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Stage-3-Testing-the-Speaker-MIC"><span class="toc-number">1.3.</span> <span class="toc-text">Stage 3 Testing the Speaker &amp; MIC</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/09/24/RetroHackset/" title="RetroHackset">RetroHackset</a><time datetime="2026-09-24T11:37:21.000Z" title="Created 2026-09-24 14:37:21">2026-09-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/09/24/introduction/" title="Hello Humans or Robots idk">Hello Humans or Robots idk</a><time datetime="2026-09-24T10:17:21.203Z" title="Created 2026-09-24 13:17:21">2026-09-24</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By 0Portex</span><span class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.2</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.7.0</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.7.0"></script><script src="/js/main.js?v=5.7.0"></script><div class="js-pjax"></div><div id="aplayer"></div><script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><script src="/js/aplayer-local.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
